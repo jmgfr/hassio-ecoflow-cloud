@@ -88,9 +88,9 @@ async def async_migrate_entry(hass, config_entry: ConfigEntry):
         new_options = {**config_entry.options}
         try:
             if CONF_INSTALLATION_SITE not in new_data:  # The variable
-                new_data[CONF_INSTALLATION_SITE] = "Home"
+                new_data[CONF_INSTALLATION_SITE] = f"Home_{str(uuid.uuid4()).upper()}"
         except NameError:
-            new_data[CONF_INSTALLATION_SITE] = "Home"
+            new_data[CONF_INSTALLATION_SITE] = f"Home_{str(uuid.uuid4()).upper()}"
         try:
             if CONF_DEVICE_LIST not in new_data:  # The variable
                 new_data[CONF_DEVICE_LIST] = [{
