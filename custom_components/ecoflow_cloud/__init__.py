@@ -1,5 +1,6 @@
 import logging
 import dataclasses
+import uuid
 from typing import Final
 
 from homeassistant.config_entries import ConfigEntry
